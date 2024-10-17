@@ -13,7 +13,7 @@ const Cards = ({ item }) => {
   const { user } = useAuth()
   const location = useLocation()
   const navigate = useNavigate()
-  const [cart, refetch] = useCart()
+  const { refetch } = useCart()
   const handleHeartClick = () => {
     setIsHeartFillted(!isHeartFillted)
   }

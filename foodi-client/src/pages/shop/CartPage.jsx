@@ -8,7 +8,7 @@ import useCart from '../../hooks/useCart'
 const CartPage = () => {
   console.log('component rerender')
   const { user } = useAuth()
-  const [cart, refetch] = useCart()
+  const { cart, refetch } = useCart()
 
   //calculate price
   const calculatePrice = (item) => {

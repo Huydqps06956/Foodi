@@ -12,7 +12,7 @@ const Navbar = () => {
 
   const { user } = useAuth()
 
-  const [cart, refetch, totalQuantity] = useCart()
+  const { totalQuantity } = useCart()
 
   // handle scroll functions
   useEffect(() => {

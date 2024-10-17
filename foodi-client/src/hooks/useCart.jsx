@@ -19,7 +19,7 @@ const useCart = () => {
     return cart.reduce((total, item) => total + item.quantity, 0)
   }, [cart])
 
-  return [cart, refetch, totalQuantity]
+  return { cart, refetch, totalQuantity }
 }
 
 export default useCart
