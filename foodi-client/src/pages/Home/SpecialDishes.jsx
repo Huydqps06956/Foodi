@@ -4,45 +4,17 @@ import 'slick-carousel/slick/slick-theme.css'
 import Slider from 'react-slick'
 import Cards from '../../components/Cards'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
-/*
-const simpleNextArrow = (props) => {
-  const { className, style, onClick } = props
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: 'block', background: 'red' }}
-      onClick={onClick}
-    >
-      Next
-    </div>
-  )
-}
-
-const simplePrevArrow = (props) => {
-  const { className, style, onClick } = props
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: 'block', background: 'green' }}
-      onClick={onClick}
-    >
-      Previous
-    </div>
-  )
-}
-*/
+import { getMenu } from '../../api/menuService'
 const SpecialDishes = () => {
   const [recipes, setRecipes] = useState([])
 
   const slider = useRef(null)
 
   useEffect(() => {
-    fetch('/menu.json')
-      .then((res) => res.json())
-      .then((data) => {
-        const specials = data.filter((item) => item.category === 'popular')
-        setRecipes(specials)
-      })
+    getMenu().then((res) => {
+      const specials = res.filter((item) => item.category === 'popular')
+      setRecipes(specials)
+    })
   }, [])
 
   //settings

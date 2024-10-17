@@ -29,6 +29,7 @@ const Cards = ({ item }) => {
         email: user.email
       }
 
+      console.log(cartItem)
       addToCartApi(cartItem)
         .then((res) => {
           if (res) {
@@ -80,7 +81,7 @@ const Cards = ({ item }) => {
       >
         <FaHeart className='h-5 w-5 cursor-pointer' />
       </div>
-      <Link to={`/menu/${item.id}`}>
+      <Link to={`/menu/${item._id}`}>
         <figure>
           <img
             src={item.image}
@@ -90,7 +91,7 @@ const Cards = ({ item }) => {
         </figure>
       </Link>
       <div className='card-body'>
-        <Link to={`/menu/${item.id}`}>
+        <Link to={`/menu/${item._id}`}>
           <h2 className='card-title'>{item.name}</h2>
         </Link>
         <p>Description of the item</p>
